@@ -22,7 +22,7 @@ jobs:
       run: npm test
       
 
-  test-macos:
+ test-macos:
     name: Test and lint code base (macOS)
     runs-on: macos-latest
     steps:
@@ -31,11 +31,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "18.x"
-    - name:Install node modules
-      - run: npm ci
-    - name: Run tests
-      - run: npm run test
-    
-      
+      - name: Install node modules
+        run: npm install
+      - name: Run tests
+        run: npm run test
 
 
